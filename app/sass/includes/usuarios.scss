@@ -1,0 +1,16 @@
+.selecionado {
+    background-color: #eaeaea;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+.unclickable{
+    cursor: not-allowed;
+}
+
+.input-error{
+    border: 1px solid red;
+}
+
