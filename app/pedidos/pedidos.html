@@ -1,7 +1,7 @@
 <div class="m-subheader">
     <div class="d-flex align-items-center">
         <div class="mr-auto">
-            <h3 class="m-subheader__title m-subheader__title--separator">Usuários</h3>
+            <h3 class="m-subheader__title m-subheader__title--separator">Pedidos</h3>
             <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
                 <li class="m-nav__item m-nav__item--home">
                     <a href="#" class="m-nav__link m-nav__link--icon">
@@ -17,7 +17,7 @@
                 <li class="m-nav__separator">-</li>
                 <li class="m-nav__item">
                     <a href="" class="m-nav__link">
-                        <span class="m-nav__link-text">usuários</span>
+                        <span class="m-nav__link-text">Pedidos</span>
                     </a>
                 </li>
             </ul>
@@ -109,15 +109,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 order-1 order-xl-2 m--align-right">
-                        <a ui-sref="inserir-usuario" class="btn btn-accent m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">
-                            <span>
-                                <i class="la la-cart-plus"></i>
-                                <span>Novo Usuário</span>
-                            </span>
-                        </a>
-                        <div class="m-separator m-separator--dashed d-xl-none"></div>
-                    </div>
                 </div>
             </div>
             <!--end: Search Form -->
@@ -133,12 +124,10 @@
                         </th>
                         <th ng-click="vm.ordenarPor('nome')" class="sorting clickable" tabindex="0" aria-controls="m_table_1" rowspan="1" colspan="1"
                             style="width: 113.25px;" aria-label="Nome: activate to sort column ascending">Nome</th>
-
-                        <th class="sorting clickable" tabindex="0" aria-controls="m_table_1" rowspan="1" colspan="1" style="width: 113.25px;" aria-label="Nome: activate to sort column ascending">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-class="{selecionado: cliente.selecionado}" ng-repeat="cliente in vm.clientes | filter:vm.inputSearch | orderBy: vm.criterioDeOrdenacao : vm.direcaoDaOrdenacao"
+                    <tr ng-class="{selecionado: cliente.selecionado}" ng-repeat="cliente in vm.pedidos | filter:vm.inputSearch | orderBy: vm.criterioDeOrdenacao : vm.direcaoDaOrdenacao"
                         data-row="0" class="m-datatable__row" style="left: 0px;">
 
                         <td data-toggle="m-tooltip" data-placement="top" title="{{cliente.id}}" data-original-title="Tooltip title" class="m-datatable__cell--center m-datatable__cell m-datatable__cell--check"
@@ -152,20 +141,6 @@
                         </td>
                         <td data-field="Nome" class="m-datatable__cell">
                             <span style="width: 133px;">{{cliente.nome}}</span>
-                        </td>
-
-                        <td data-field="FazerPedido" class="m-datatable__cell">
-                            <div class="row">
-                                <div class="col-md-3">
-                                     <button ng-click="vm.fazerPedido(cliente.id)" style="width: 130px;" class="btn m-btn--square  btn-outline-danger">
-                                        Fazer Pedido
-                                    </button>
-                                </div>
-                                <div class="col-md-3 m--align-right">
-                                    <button ng-click="vm.editar(cliente.id)" type="button" class="btn m-btn--pill btn-primary">Editar</button>
-                                    <button type="button" ng-click="vm.excluir(cliente.id)" class="btn m-btn--pill btn-danger m--margin-left-10">Excluir</button>
-                                </div>
-                            </div>
                         </td>
                     </tr>
                 </tbody>

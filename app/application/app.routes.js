@@ -31,5 +31,19 @@
             controllerAs: 'vm' 
          });
 
+         $stateProvider.state('pedidos',{
+             url:'/pedidos',
+             templateUrl:'pedidos/pedidos.html',
+             controller:'pedidosController',
+             controllerAs: 'vm'
+         });
+
+         $stateProvider.state('inserir-pedido',{
+            url:'/inserir-pedido/:id',
+            templateUrl:'pedidos/pedidosCreate.html',
+            controller:'pedidosCreateController',
+            controllerAs: 'vm'
+        });
+
     }
   })();

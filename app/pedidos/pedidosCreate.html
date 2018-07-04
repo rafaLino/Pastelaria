@@ -1,0 +1,83 @@
+<div class="m-subheader ng-scope">
+    <div class="d-flex align-items-center">
+        <div class="mr-auto">
+            <h3 class="m-subheader__title m-subheader__title--separator">Usuários</h3>
+            <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                <li class="m-nav__item m-nav__item--home">
+                    <a href="#" class="m-nav__link m-nav__link--icon">
+                        <i class="m-nav__link-icon la la-home"></i>
+                    </a>
+                </li>
+                <li class="m-nav__separator">-</li>
+                <li class="m-nav__item">
+                    <a href="" class="m-nav__link">
+                        <span class="m-nav__link-text">Cadastro</span>
+                    </a>
+                </li>
+                <li class="m-nav__separator">-</li>
+                <li class="m-nav__item">
+                    <a href="" class="m-nav__link">
+                        <span class="m-nav__link-text">Pedido</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="m-content ng-scope">
+    <div class="m-portlet m-portlet--mobile">
+        <div class="m-portlet__body">
+            <form ng-submit="vm.salvar(vm.pedido)" name="userForm" class="m-form m-form--fit m-form--label-align-right">
+                <div class="m-portlet__body">
+                    <div class="form-group m-form__group row">
+                        <!--<label class="col-form-label">* Nome</label>
+                        <div class="col-lg-5 col-md-5 col-sm-12">
+                             <div class="m-input-icon m-input-icon--right">
+                                <input autocomplete="off" type="text" ng-model="vm.pedido.nome" ng-class="{'input-error': userForm.nome.$touched && userForm.nome.$invalid }"
+                                    class="form-control m-input" name="nome" data-toggle="m-tooltip" title="" data-original-title=""
+                                    required>
+                                <span ng-if="userForm.nome.$invalid " class="m-input-icon__icon m-input-icon__icon--right">
+                                    <span>
+                                        <i class="la la-warning m--font-danger"></i>
+                                    </span>
+                                </span>
+                            </div> -->
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-12">
+                            <div class="m-input-icon m-input-icon--right">
+                                <select class="form-control m-input" ng-options="produto.id as produto.nome for produto in vm.produtos" ng-model="vm.pedidos.itens.produtoId">
+                                    <option value="" selected disabled>--Selecione Produto--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-portlet__foot m-portlet__no-border m-portlet__foot--fit">
+                    <div class="m-form__actions m-form__actions--solid">
+                        <div class="row">
+                            <div class="col-lg-12 m--align-right">
+                                <div class="btn-group">
+                                    <button type="submit" ng-class="{'unclickable': userForm.$invalid}" ng-disabled="userForm.$invalid" class="btn btn-primary">Salvar</button>
+                                    <button type="button" ng-class="{'unclickable': userForm.$invalid}" ng-disabled="userForm.$invalid" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="clickable dropdown-item" ng-click="vm.salvar(vm.usuario,true)">Salvar e Inserir Outro</a>
+                                    </div>
+                                </div>
+                                <span>ou</span>
+                                <a ui-sref="usuarios" class="m--font-primary m--font-boldest">Cancelar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div ng-if="vm.alert" class="m-alert m-alert--outline alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                </button>
+                <strong>Sucesso!</strong> {{vm.mensagem}}
+            </div>
+        </div>
+    </div>
+</div>
