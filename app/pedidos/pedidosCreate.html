@@ -42,16 +42,16 @@
                                     </span>
                                 </span>
                             </div> -->
-                        </div>
-                        <div class="col-lg-5 col-md-5 col-sm-12">
-                            <div class="m-input-icon m-input-icon--right">
-                                <select class="form-control m-input" ng-options="produto.id as produto.nome for produto in vm.produtos" ng-model="vm.pedidos.itens.produtoId">
-                                    <option value="" selected disabled>--Selecione Produto--</option>
-                                </select>
-                            </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-12">
+                        <div class="m-input-icon m-input-icon--right">
+                            <select class="form-control m-input" ng-options="produto.id as produto.nome for produto in vm.produtos" ng-model="vm.pedido.pedidos.itens.produtoId">
+                                <option value="" selected disabled>--Selecione Produto--</option>
+                            </select>
                         </div>
                     </div>
                 </div>
+
                 <div class="m-portlet__foot m-portlet__no-border m-portlet__foot--fit">
                     <div class="m-form__actions m-form__actions--solid">
                         <div class="row">
@@ -63,7 +63,7 @@
                                         <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="clickable dropdown-item" ng-click="vm.salvar(vm.usuario,true)">Salvar e Inserir Outro</a>
+                                        <a class="clickable dropdown-item" ng-click="vm.salvar(vm.pedido)">Salvar e Inserir Outro</a>
                                     </div>
                                 </div>
                                 <span>ou</span>
@@ -73,11 +73,12 @@
                     </div>
                 </div>
             </form>
-            <div ng-if="vm.alert" class="m-alert m-alert--outline alert alert-success alert-dismissible fade show" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                </button>
-                <strong>Sucesso!</strong> {{vm.mensagem}}
-            </div>
+        </div>
+        <div ng-if="vm.alert" class="m-alert m-alert--outline alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            </button>
+            <strong>Sucesso!</strong> {{vm.mensagem}}
         </div>
     </div>
+</div>
 </div>
